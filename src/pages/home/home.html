@@ -1,13 +1,10 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding class="fundo">
 
-<ion-content padding>
-  <h2>Calendário Sanzacional - App</h2>
   <p>
-    Confira que dia é hoje!
+    <ion-item>
+      <ion-label>Dia</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dataSelecionada" (ngModelChange)="selecionarData(dataSelecionada)"></ion-datetime>
+    </ion-item>
   </p>
   
   <ion-list *ngFor="let dataComemorativa of listaDia">
@@ -15,7 +12,6 @@
     <h2>{{dataComemorativa.descricao}}</h2>
     <p>{{dia}} de {{mesDescricao}} • {{ano}}</p>
   </ion-item>
-
   
 </ion-list>
 
